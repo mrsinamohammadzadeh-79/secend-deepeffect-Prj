@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Effect — فروشگاه لوازم آنتیک و کلکسیونی</title>
+<meta name="description" content="دیپ افکت (Deep Effect)؛ فروشگاه آنلاین لوازم آنتیک و کلکسیونی. مجموعه‌ای از نفیس‌ترین اشیای عتیقه و کلکسیونی با ضمانت اصالت، ارسال سریع و بسته‌بندی ویژه.">
+<meta name="keywords" content="لوازم آنتیک, اشیای عتیقه, کلکسیونی, دیپ افکت, Deep Effect, فروشگاه آنتیک">
+<meta name="author" content="Deep Effect">
+<meta name="theme-color" content="#E9D9B8">
+<link rel="canonical" href="https://deepeffect.ir/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deep Effect">
+<meta property="og:title" content="Deep Effect — فروشگاه لوازم آنتیک و کلکسیونی">
+<meta property="og:description" content="مجموعه‌ای از نفیس‌ترین لوازم آنتیک و کلکسیونی با ضمانت اصالت و ارسال سریع به سراسر کشور.">
+<meta property="og:url" content="https://deepeffect.ir/">
+<meta property="og:image" content="https://deepeffect.ir/hero-image.webp">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Deep Effect — فروشگاه لوازم آنتیک و کلکسیونی">
+<meta name="twitter:description" content="مجموعه‌ای از نفیس‌ترین لوازم آنتیک و کلکسیونی با ضمانت اصالت.">
+<meta name="twitter:image" content="https://deepeffect.ir/hero-image.webp">
+
+<!-- Icons & resource hints -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="scene-background.webp" fetchpriority="high">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto;overscroll-behavior:none}
+::-webkit-scrollbar{width:6px;background:#E9D9B8}
+::-webkit-scrollbar-thumb{background:#5A4A38}
+::selection{background:#5A4A38;color:#F4EBD8}
+body{background:#E9D9B8;font-family:'Vazirmatn','Noto Naskh Arabic',Tahoma,serif;color:#2B241D;line-height:1.8;min-height:100vh;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:99998;
+background:
+  radial-gradient(ellipse at 20% 30%, rgba(90,74,56,0.04) 0%, transparent 50%),
+  radial-gradient(ellipse at 80% 70%, rgba(90,74,56,0.05) 0%, transparent 50%),
+  radial-gradient(ellipse at 50% 50%, rgba(233,217,184,0) 0%, rgba(90,74,56,0.03) 100%);
+  mix-blend-mode:multiply}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:99999;
+background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+background-repeat:repeat;background-size:256px 256px;opacity:1;mix-blend-mode:multiply}
+
+/* === LOADER === */
+#loader{position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:#E9D9B8;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:opacity 0.85s ease,visibility 0.85s ease;
+  background-image:radial-gradient(circle at 50% 38%,rgba(176,141,87,0.18),transparent 56%),
+    repeating-linear-gradient(-45deg,rgba(90,74,56,0.03) 0 2px,transparent 2px 26px),
+    repeating-linear-gradient(90deg,rgba(90,74,56,0.03) 0 1px,transparent 1px 48px);
+  box-shadow:inset 0 0 150px rgba(90,74,56,0.16)}
+#loader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+#loader.loaded .loader-inner{opacity:0;transform:translateY(-12px) scale(0.985)}
+#loader .loader-inner{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:92vw;transition:opacity 0.6s ease,transform 0.6s ease}
+
+/* big drifting monogram backdrop */
+.loader-bg-mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);font-family:'Amiri','Noto Naskh Arabic',serif;font-size:clamp(180px,40vw,420px);font-weight:700;color:rgba(90,74,56,0.05);letter-spacing:12px;pointer-events:none;line-height:1;user-select:none;animation:markPan 8s ease-in-out infinite alternate}
+
+/* corner frame brackets */
+.loader-frame{position:absolute;inset:0;pointer-events:none}
+.loader-frame .fr{position:absolute;width:54px;height:54px;border:2px solid rgba(90,74,56,0.38);opacity:0;animation:cornerIn 0.9s ease forwards}
+.loader-frame .fr i{position:absolute;width:5px;height:5px;background:#B08D57}
+.loader-frame .f1{top:16px;left:16px;border-right:none;border-bottom:none;animation-delay:0.15s}
+.loader-frame .f1 i{top:-2px;left:-2px}
+.loader-frame .f2{top:16px;right:16px;border-left:none;border-bottom:none;animation-delay:0.3s}
+.loader-frame .f2 i{top:-2px;right:-2px}
+.loader-frame .f3{bottom:16px;right:16px;border-left:none;border-top:none;animation-delay:0.45s}
+.loader-frame .f3 i{bottom:-2px;right:-2px}
+.loader-frame .f4{bottom:16px;left:16px;border-right:none;border-top:none;animation-delay:0.6s}
+.loader-frame .f4 i{bottom:-2px;left:-2px}
+
+/* floating sparkles */
+.loader-spark{position:absolute;font-size:14px;color:rgba(90,74,56,0.4);pointer-events:none;opacity:0;animation:floaty 7s ease-in-out infinite}
+.loader-spark.s1{top:15%;left:11%}
+.loader-spark.s2{top:23%;right:13%;font-size:19px;animation-delay:1.1s}
+.loader-spark.s3{bottom:27%;left:16%;font-size:11px;animation-delay:2.2s}
+.loader-spark.s4{bottom:16%;right:19%;animation-delay:0.6s}
+.loader-spark.s5{top:63%;left:5%;font-size:17px;animation-delay:1.7s}
+.loader-spark.s6{top:71%;right:5%;animation-delay:2.8s}
+.loader-spark.s7{bottom:44%;left:28%;font-size:10px;animation-delay:3.4s}
+.loader-spark.s8{top:40%;right:28%;font-size:13px;animation-delay:4s}
+
+/* seal-style emblem: diamond stamp, no circles */
+.loader-inner>*{opacity:0;animation:fadeUp 0.7s ease forwards}
+.loader-inner>*:nth-child(1){animation-delay:0.05s}
+.loader-inner>*:nth-child(2){animation-delay:0.15s}
+.loader-inner>*:nth-child(3){animation-delay:0.25s}
+.loader-inner>*:nth-child(4){animation-delay:0.35s}
+.loader-inner>*:nth-child(5){animation-delay:0.45s}
+.loader-inner>*:nth-child(6){animation-delay:0.55s}
+.loader-inner>*:nth-child(7){animation-delay:0.65s}
+.loader-inner>*:nth-child(8){animation-delay:0.75s}
+.loader-emblem{position:relative;width:200px;height:200px;margin-bottom:26px}
+.loader-emblem::before{content:'';position:absolute;inset:-20px;transform:rotate(45deg);background:linear-gradient(135deg,rgba(176,141,87,0.32),rgba(176,141,87,0.05));filter:blur(14px);animation:pulseGlow 2.6s ease-in-out infinite}
+.loader-rays{position:absolute;inset:-16px;background:repeating-conic-gradient(rgba(90,74,56,0.14) 0deg 6deg,transparent 6deg 18deg);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);animation:raysSpin 30s linear infinite;opacity:0.85}
+.loader-rings{display:none}
+.loader-diamond{display:none}
+.loader-logo{position:absolute;inset:18px;width:calc(100% - 36px);height:calc(100% - 36px);object-fit:contain;z-index:1;filter:drop-shadow(0 6px 26px rgba(90,74,56,0.28));animation:logoFloat 2.6s ease-in-out infinite}
+@keyframes logoFloat{0%,100%{opacity:0.98;transform:scale(0.98)}50%{opacity:1;transform:scale(1.02)}}
+@keyframes raysSpin{to{transform:rotate(360deg)}}
+@keyframes pulseGlow{0%,100%{opacity:0.55}50%{opacity:1}}
+@keyframes shimmer{from{transform:translateX(-60px)}to{transform:translateX(340px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{from{width:0;opacity:0}to{width:56px;opacity:1}}
+@keyframes markPan{from{transform:translate(-50%,-56%) rotate(-3deg) scale(1)}to{transform:translate(-50%,-56%) rotate(3deg) scale(1.05)}}
+@keyframes cornerIn{from{opacity:0;width:0;height:0}to{opacity:1;width:54px;height:54px}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0);opacity:0}10%,80%{opacity:0.5}50%{transform:translateY(-28px) rotate(22deg)}}
+@keyframes marqueeMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.loader-brand{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:clamp(34px,7vw,54px);font-weight:700;color:#1D1814;letter-spacing:6px;line-height:1;margin-right:-6px;text-shadow:0 1px 0 rgba(255,255,255,0.5),0 12px 28px rgba(90,74,56,0.22)}
+.loader-brand em{font-style:italic;color:#8B6A3C;font-weight:700}
+.loader-brand::after{content:'';display:block;width:56px;height:1px;margin:14px auto 0;background:linear-gradient(90deg,transparent,#B08D57,transparent);animation:lineGrow 1.4s ease-out 0.4s both}
+.loader-kicker{font-family:'Vazirmatn',Tahoma,serif;font-size:11px;letter-spacing:1px;color:#8B7760;margin-top:18px;line-height:1.9}
+.loader-kicker b{color:#2B241D;font-weight:500}
+.loader-domain{display:inline-block;margin-top:16px;padding:7px 18px;border:1px solid rgba(90,74,56,0.35);font-family:'Vazirmatn',Tahoma,serif;font-size:11px;letter-spacing:1px;color:#2B241D;text-decoration:none;transition:all 0.3s ease;background:rgba(255,255,255,0.15)}
+.loader-domain:hover{background:#2B241D;color:#F4EBD8;border-color:#2B241D}
+.loader-chips{display:flex;gap:8px;margin-top:20px}
+.loader-chip{font-family:'Vazirmatn',Tahoma,serif;font-size:9px;color:#8B7760;border:1px solid rgba(90,74,56,0.28);padding:4px 10px;letter-spacing:1px;background:rgba(255,255,255,0.12);transition:all 0.3s ease}
+.loader-chip b{color:#2B241D;font-weight:700;font-variant-numeric:tabular-nums}
+.loader-chip.done{border-color:#B08D57;color:#8B6A3C;background:rgba(176,141,87,0.12)}
+.loader-bar-wrap{position:relative;width:min(320px,74vw);height:2px;background:#D4C29E;margin-top:24px;overflow:hidden}
+#loader-bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#8B7760,#B08D57);position:relative;transition:width 0.3s ease-out}
+#loader-bar-fill::after{content:'';position:absolute;top:0;bottom:0;left:0;width:56px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.75),transparent);animation:shimmer 1.4s linear infinite}
+.loader-meta{display:flex;justify-content:space-between;width:min(320px,74vw);margin-top:10px;font-family:'Vazirmatn',Tahoma,serif;font-size:10px;color:#8B7760;letter-spacing:0.5px}
+#loader-pct{color:#2B241D;font-weight:700;font-variant-numeric:tabular-nums}
+.loader-note{font-family:'Vazirmatn',Tahoma,serif;font-size:9px;color:#A7947B;margin-top:24px;letter-spacing:1px}
+.loader-marquee{position:absolute;bottom:0;left:0;right:0;height:36px;border-top:1px solid rgba(90,74,56,0.22);background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(90,74,56,0.07));overflow:hidden;display:flex;align-items:center;direction:ltr;opacity:0;animation:fadeUp 1s ease 0.6s forwards}
+.loader-marquee-track{display:flex;white-space:nowrap;animation:marqueeMove 20s linear infinite;font-family:'Vazirmatn',Tahoma,serif;font-size:10px;letter-spacing:3px;color:#8B7760}
+.loader-marquee-track span{padding-right:10px}
+
+/* === 3D SCENE === */
+#three-container{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:100;pointer-events:none;opacity:1;transition:opacity 0.1s}
+#three-container canvas{display:block;width:100%!important;height:100%!important}
+
+/* === SCROLL HINT === */
+#scroll-hint{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);z-index:150;color:#5A4A38;font-size:11px;font-weight:300;letter-spacing:2px;opacity:0.7;transition:opacity 0.6s ease;text-align:center}
+#scroll-hint.hidden{opacity:0;pointer-events:none}
+#scroll-hint-arrow{display:block;font-size:16px;margin-top:4px;animation:bounce 2s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* === SCROLL SPACER === */
+#scroll-spacer{height:240vh;pointer-events:none}
+
+/* === CONTENT WRAPPER === */
+#content{position:relative;z-index:50;background:#E9D9B8;opacity:0}
+#content.visible{opacity:1}
+#content .wrapper{max-width:1440px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
+
+/* === NEWSPAPER HEADER === */
+.header{text-align:center;padding:24px 0 16px;position:relative}
+.header-top-row{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch;margin-bottom:12px}
+.header-box{border:1px solid #5A4A38;padding:4px 14px;background:linear-gradient(135deg, #E1CFAC 0%, #E9D9B8 100%);text-align:center;display:flex;flex-direction:column;justify-content:center;min-height:32px}
+.header-box-left{text-align:center}
+.header-box-right{text-align:center}
+.header-box-icon{font-size:18px;color:#5A4A38;margin-bottom:4px;display:block}
+.header-box-title{font-size:30px;font-weight:700;color:#1D1814;letter-spacing:0.5px;margin-bottom:2px;font-family:'Amiri','Noto Naskh Arabic',serif}
+.header-box-text{font-size:9px;color:#5A4A38;line-height:1.4}
+.double-divider{height:1px;background:linear-gradient(to right, transparent 0%, #5A4A38 15%, #5A4A38 85%, transparent 100%);margin:0 0 3px}
+.double-divider+.double-divider{margin:0 0 20px}
+.single-divider{height:1px;background:linear-gradient(to right, transparent 0%, #8B7760 10%, #8B7760 90%, transparent 100%);margin:12px 0}
+.masthead{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:64px;font-weight:700;color:#1D1814;line-height:1;letter-spacing:-1px;margin:0;position:relative;display:inline-block}
+.masthead-sub{font-size:11px;color:#5A4A38;font-weight:300;letter-spacing:2px;margin-top:4px;display:block;font-family:'Vazirmatn','Noto Naskh Arabic',Tahoma,serif}
+.masthead-ornament{color:#5A4A38;font-size:20px;letter-spacing:8px;margin:8px 0;opacity:0.6}
+
+/* === NAVIGATION === */
+.nav{border-top:1px solid #5A4A38;border-bottom:1px solid #5A4A38;padding:0;margin-bottom:32px;position:relative}
+.nav::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:#8B7760}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.nav-links{display:flex;align-items:center;gap:0;list-style:none}
+.nav-links li{position:relative}
+.nav-links li+li::before{content:'|';color:#8B7760;font-size:10px;padding:0 12px;opacity:0.5}
+.nav-links a{font-size:11px;font-weight:500;color:#2B241D;text-decoration:none;letter-spacing:0.5px;transition:color 0.2s;padding:4px 0}
+.nav-links a:hover{color:#5A4A38}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.nav-search{display:flex;align-items:center;border:1px solid #8B7760;padding:0;background:#E1CFAC}
+.nav-search input{border:none;background:transparent;padding:6px 10px;font-size:10px;color:#2B241D;width:140px;font-family:'Vazirmatn',Tahoma,serif;outline:none}
+.nav-search input::placeholder{color:#8B7760;opacity:0.7}
+.nav-search button{background:transparent;border:none;border-right:1px solid #8B7760;padding:6px 10px;cursor:pointer;color:#5A4A38;font-size:11px;transition:background 0.2s}
+.nav-search button:hover{background:#D4C29E}
+.nav-icons{display:flex;align-items:center;gap:12px}
+.nav-icons a{color:#2B241D;text-decoration:none;font-size:11px;transition:color 0.2s;display:flex;align-items:center;gap:4px}
+.nav-icons a:hover{color:#5A4A38}
+
+/* === MAIN GRID === */
+.main-grid{display:grid;grid-template-columns:260px 1fr 260px;gap:28px;margin-bottom:40px}
+.sidebar-left{display:flex;flex-direction:column;gap:20px}
+.sidebar-right{display:flex;flex-direction:column;gap:20px}
+.stretch-box{flex:1;display:flex;flex-direction:column}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:10px;color:#5A4A38;border:1px solid #8B7760;padding:4px 10px;border-radius:2px;background:rgba(233,217,184,0.4);transition:background 0.2s,color 0.2s;cursor:default}
+.tag:hover{background:#5A4A38;color:#E9D9B8}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed rgba(90,74,56,0.2)}
+.stat-row:last-child{border-bottom:none}
+.stat-num{font-family:'Amiri',serif;font-size:18px;font-weight:700;color:#1D1814}
+.stat-label{font-size:10px;color:#5A4A38}
+.newspaper-box{border:1px solid #5A4A38;padding:20px;background:linear-gradient(180deg, #E1CFAC 0%, #E9D9B8 100%);position:relative}
+.newspaper-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right, transparent 0%, #8B7760 20%, #8B7760 80%, transparent 100%);opacity:0.5}
+.box-title{font-size:11px;font-weight:700;color:#1D1814;letter-spacing:0.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #8B7760;display:flex;align-items:center;gap:8px}
+.box-title-icon{color:#5A4A38;font-size:13px}
+.cat-list{list-style:none}
+.cat-list li{border-bottom:1px dashed rgba(90,74,56,0.2);padding:8px 0;display:flex;align-items:center;gap:8px}
+.cat-list li:last-child{border-bottom:none}
+.cat-list a{color:#2B241D;text-decoration:none;font-size:11px;transition:color 0.2s;display:flex;align-items:center;gap:6px;flex:1}
+.cat-list a::before{content:'▸';color:#5A4A38;font-size:10px;opacity:0.6}
+.cat-list a:hover{color:#5A4A38}
+.cat-count{color:#8B7760;font-size:9px}
+.featured-product{margin-top:8px}
+.featured-product-img{width:100%;background:#E1CFAC;margin-bottom:10px;position:relative;overflow:hidden;border:1px solid #8B7760}
+.featured-product-img img{width:100%;height:auto;display:block;filter:sepia(0.25) contrast(1.05)}
+.featured-product-img::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+background:
+  repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(233,217,184,0.05) 2px, rgba(233,217,184,0.05) 4px),
+  repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(233,217,184,0.03) 3px, rgba(233,217,184,0.03) 6px);
+mix-blend-mode:overlay}
+.featured-product-title{font-size:11px;font-weight:500;color:#2B241D;margin-bottom:2px}
+.featured-product-price{font-size:12px;font-weight:700;color:#1D1814;margin-bottom:6px}
+.featured-product-btn{border:1px solid #2B241D;background:transparent;color:#2B241D;padding:6px 16px;font-size:10px;cursor:pointer;transition:all 0.3s;font-family:'Vazirmatn',Tahoma,serif;font-weight:500}
+.featured-product-btn:hover{background:#2B241D;color:#F4EBD8}
+.rare-desc{margin-top:12px;font-size:10px;color:#5A4A38;line-height:1.9;text-align:justify;padding-top:10px;border-top:1px dashed rgba(90,74,56,0.3)}
+.rare-desc b{color:#1D1814}
+.ad-box{border:2px solid #5A4A38;padding:24px 16px;text-align:center;background:linear-gradient(180deg, #E9D9B8 0%, #E1CFAC 100%);position:relative}
+.ad-box::after{content:'';position:absolute;top:3px;left:3px;right:3px;bottom:3px;border:1px solid rgba(90,74,56,0.15);pointer-events:none}
+.ad-discount{font-family:'Amiri',serif;font-size:36px;font-weight:700;color:#1D1814;line-height:1;margin-bottom:4px}
+.ad-sub{font-size:10px;color:#5A4A38;font-weight:500;margin-bottom:12px;letter-spacing:0.5px}
+.ad-btn{border:1px solid #2B241D;background:transparent;color:#2B241D;padding:8px 24px;font-size:10px;cursor:pointer;transition:all 0.3s;font-family:'Vazirmatn',Tahoma,serif;font-weight:500;letter-spacing:0.5px}
+.ad-btn:hover{background:#2B241D;color:#F4EBD8}
+
+/* === HERO === */
+.hero{padding:0;margin-bottom:24px}
+.hero-category-tag{font-size:9px;color:#5A4A38;font-weight:500;letter-spacing:1px;margin-bottom:8px}
+.hero-headline{font-family:'Amiri',serif;font-size:42px;font-weight:700;color:#1D1814;line-height:1.2;margin-bottom:8px}
+.hero-deck{font-size:13px;color:#5A4A38;font-weight:300;line-height:1.7;margin-bottom:20px;max-width:90%}
+.hero-image{width:100%;height:340px;background-color:#E1CFAC;background-size:cover;background-position:center;margin-bottom:20px;position:relative;overflow:hidden;border:1px solid #5A4A38}
+.hero-image::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+background:
+  radial-gradient(ellipse at 30% 40%, rgba(233,217,184,0.12) 0%, transparent 50%),
+  radial-gradient(ellipse at 70% 60%, rgba(200,180,140,0.08) 0%, transparent 40%);
+mix-blend-mode:overlay}
+.hero-image::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+background:
+  repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 4px);
+mix-blend-mode:multiply}
+.hero-image-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(0deg, rgba(29,24,20,0.6) 0%, transparent 100%)}
+.hero-image-caption{font-size:10px;color:#E9D9B8;opacity:0.8}
+.hero-btn{border:1px solid #2B241D;background:transparent;color:#2B241D;padding:12px 32px;font-size:11px;cursor:pointer;transition:all 0.3s;font-family:'Vazirmatn',Tahoma,serif;font-weight:500;letter-spacing:1px;display:inline-block;text-decoration:none}
+.hero-btn:hover{background:#2B241D;color:#F4EBD8}
+.section-title-wrap{display:flex;align-items:center;gap:16px;margin-bottom:16px;margin-top:28px}
+.section-title-wrap::before,
+.section-title-wrap::after{content:'';flex:1;height:1px;background:linear-gradient(to right, transparent 0%, #5A4A38 50%, transparent 100%)}
+.section-title{font-family:'Amiri',serif;font-size:24px;font-weight:700;color:#1D1814;white-space:nowrap;padding:0 12px}
+
+/* === PRODUCT CARDS === */
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px}
+.product-card{border:1px solid #5A4A38;padding:0;background:linear-gradient(180deg, #E9D9B8 0%, #E1CFAC 100%);transition:all 0.3s;position:relative}
+.product-card:hover{border-color:#2B241D;transform:translateY(-1px)}
+.product-card-img{width:100%;position:relative;overflow:hidden;border-bottom:1px solid #8B7760;background:#E1CFAC}
+.product-card-img img{width:100%;height:auto;display:block;filter:sepia(0.25) contrast(1.05)}
+.product-card-img::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+background:
+  repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
+mix-blend-mode:multiply;opacity:0.5}
+.product-card-body{padding:14px 16px 16px}
+.product-card-category{font-size:8px;color:#8B7760;letter-spacing:1px;margin-bottom:4px;font-weight:500}
+.product-card-title{font-size:12px;font-weight:700;color:#1D1814;margin-bottom:4px;line-height:1.4}
+.product-card-desc{font-size:10px;color:#5A4A38;line-height:1.5;margin-bottom:8px;opacity:0.8}
+.product-card-price{font-size:15px;font-weight:700;color:#1D1814;margin-bottom:10px;letter-spacing:0.5px}
+.product-card-btn{border:1px solid #2B241D;background:transparent;color:#2B241D;padding:6px 18px;font-size:10px;cursor:pointer;transition:all 0.3s;font-family:'Vazirmatn',Tahoma,serif;font-weight:500}
+.product-card-btn:hover{background:#2B241D;color:#F4EBD8}
+.product-badge{position:absolute;top:8px;right:8px;background:#2B241D;color:#F4EBD8;padding:3px 8px;font-size:8px;font-weight:700;letter-spacing:0.5px;z-index:2}
+.product-card-img-wrap{position:relative}
+
+/* === PROMO BOX (fills empty grid cell in the "تازه‌های بازار" grid) === */
+.products-grid .promo-box{border:1px solid #5A4A38;background:linear-gradient(180deg,#E1CFAC 0%,#D4C29E 100%);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 18px;gap:10px;overflow:hidden}
+.products-grid .promo-box::before{content:'';position:absolute;top:6px;left:6px;right:6px;bottom:6px;border:1px solid rgba(90,74,56,0.2);pointer-events:none}
+.products-grid .promo-ornament{font-size:30px;color:#2B241D;opacity:0.25;line-height:1}
+.products-grid .promo-title{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:19px;font-weight:700;color:#1D1814;line-height:1.4}
+.products-grid .promo-text{font-size:10px;color:#5A4A38;line-height:1.8;max-width:300px}
+.products-grid .promo-note{font-size:9px;color:#8B7760;letter-spacing:0.5px}
+.products-grid .promo-btn{display:inline-block;border:1px solid #2B241D;color:#2B241D;padding:8px 20px;font-size:10px;text-decoration:none;transition:all 0.3s;font-family:'Vazirmatn',Tahoma,serif;font-weight:500;margin-top:2px}
+.products-grid .promo-btn:hover{background:#2B241D;color:#F4EBD8}
+@media(min-width:1201px){
+  .products-grid .promo-box{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:center;text-align:right;padding:22px 30px;gap:18px}
+  .products-grid .promo-box .promo-head{display:flex;flex-direction:column;gap:4px}
+  .products-grid .promo-box .promo-text{max-width:560px}
+  .products-grid .promo-foot{display:flex;align-items:center;gap:18px}
+}
+
+/* === TRUST & SIDEBAR === */
+.trust-box{display:flex;flex-direction:column;gap:14px}
+.trust-item{display:flex;align-items:flex-start;gap:10px;padding-bottom:12px;border-bottom:1px dashed rgba(90,74,56,0.2)}
+.trust-item:last-child{border-bottom:none;padding-bottom:0}
+.trust-icon{color:#5A4A38;font-size:14px;flex-shrink:0;width:18px;text-align:center}
+.trust-content{flex:1}
+.trust-title{font-size:11px;font-weight:700;color:#1D1814;margin-bottom:2px}
+.trust-text{font-size:10px;color:#5A4A38;line-height:1.5}
+.newsletter-form{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.newsletter-form input{border:1px solid #8B7760;background:#E9D9B8;padding:10px 12px;font-size:10px;color:#2B241D;font-family:'Vazirmatn',Tahoma,serif;outline:none;transition:border-color 0.2s}
+.newsletter-form input:focus{border-color:#2B241D}
+.newsletter-form input::placeholder{color:#8B7760;opacity:0.7}
+.newsletter-form button{border:1px solid #2B241D;background:#2B241D;color:#F4EBD8;padding:10px 16px;font-size:10px;cursor:pointer;transition:all 0.3s;font-family:'Vazirmatn',Tahoma,serif;font-weight:500}
+.newsletter-form button:hover{background:#47392C}
+
+/* === FOOTER === */
+.footer{border-top:2px solid #5A4A38;margin-top:48px;padding:40px 0 32px;position:relative}
+.footer::before{content:'';position:absolute;top:-3px;left:0;right:0;height:1px;background:#8B7760}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.footer-title{font-size:12px;font-weight:700;color:#1D1814;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid #8B7760;letter-spacing:0.5px}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:6px}
+.footer-links a{color:#5A4A38;text-decoration:none;font-size:11px;transition:color 0.2s}
+.footer-links a:hover{color:#1D1814}
+.footer-text{font-size:10px;color:#5A4A38;line-height:1.7}
+.footer-social{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid #8B7760;color:#5A4A38;font-size:11px;text-decoration:none;transition:all 0.3s}
+.footer-social a:hover{background:#5A4A38;color:#E9D9B8;border-color:#2B241D}
+.footer-bottom{border-top:1px solid #8B7760;margin-top:28px;padding-top:20px;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom-text{font-size:9px;color:#8B7760}
+.footer-ornament{text-align:center;font-size:18px;color:#8B7760;letter-spacing:6px;margin:0;opacity:0.5}
+
+/* === RESPONSIVE === */
+@media(max-width:1200px){
+  .main-grid{grid-template-columns:1fr;gap:24px}
+  .main-grid>main{order:1}
+  .main-grid>.sidebar-left{order:2}
+  .main-grid>.sidebar-right{order:3}
+  .sidebar-left,.sidebar-right{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .sidebar-left .stretch-box,.sidebar-right .stretch-box{grid-column:1/-1}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .wrapper{padding:0 24px}
+  .header-top-row{grid-template-columns:1fr;gap:12px}
+  .header-box-left,.header-box-right{text-align:center}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  #content .wrapper{padding:0 24px}
+}
+@media(max-width:768px){
+  .masthead{font-size:32px}
+  .masthead-ornament{font-size:16px;letter-spacing:6px;margin:6px 0}
+  .hero-headline{font-size:26px}
+  .hero-image{height:220px}
+  .hero-deck{max-width:100%}
+  .section-title{font-size:20px}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-card-body{padding:10px}
+  .product-card-title{font-size:11px}
+  .product-card-desc{font-size:9px;margin-bottom:6px}
+  .product-card-price{font-size:13px;margin-bottom:8px}
+  .product-card-btn{padding:5px 10px;font-size:9px;width:100%}
+  .sidebar-left,.sidebar-right{grid-template-columns:1fr}
+  .nav-inner{flex-direction:column;gap:12px}
+  .nav-links{flex-wrap:wrap;justify-content:center;row-gap:6px}
+  .nav-links li+li::before{padding:0 8px}
+  .nav-actions{flex-wrap:wrap;justify-content:center;gap:10px;width:100%}
+  .nav-search{flex:1;min-width:0;max-width:100%}
+  .nav-search input{width:100%;min-width:0}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:6px;text-align:center}
+  #content .wrapper{padding:0 16px}
+  .header{padding:24px 0 16px}
+  #scroll-hint{display:none}
+}
+@media(max-width:480px){
+  .masthead{font-size:26px}
+  .header-box-title{font-size:22px}
+  .hero-headline{font-size:22px}
+  .hero-image{height:180px}
+  .hero-btn{padding:10px 22px}
+  .ad-discount{font-size:30px}
+}
+
+/* === ANIMATIONS === */
+.anim-fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.anim-fade-up.visible{opacity:1;transform:translateY(0)}
+.anim-fade-left{opacity:0;transform:translateX(-20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.anim-fade-left.visible{opacity:1;transform:translateX(0)}
+.anim-fade-right{opacity:0;transform:translateX(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.anim-fade-right.visible{opacity:1;transform:translateX(0)}
+.anim-scale-in{opacity:0;transform:scale(0.95);transition:opacity 0.5s ease,transform 0.5s ease}
+.anim-scale-in.visible{opacity:1;transform:scale(1)}
+.product-card{transition:all 0.3s ease,opacity 0.5s ease,transform 0.5s ease}
+.product-card:hover{transform:translateY(-3px) scale(1.01)}
+.product-card .product-card-btn{transition:all 0.3s ease}
+.product-card:hover .product-card-btn{background:#2B241D;color:#F4EBD8}
+.hero-btn,.ad-btn,.featured-product-btn{transition:all 0.3s ease}
+.hero-btn:hover,.ad-btn:hover,.featured-product-btn:hover{transform:translateY(-1px)}
+.header-box{transition:all 0.3s ease}
+.header-box:hover{border-color:#2B241D}
+.nav-links a{transition:color 0.2s ease,transform 0.2s ease}
+.nav-links a:hover{transform:translateY(-1px)}
+.footer-social a{transition:all 0.3s ease}
+.footer-social a:hover{transform:translateY(-2px)}
+@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulseGlow{0%,100%{text-shadow:0 0 8px rgba(233,217,184,0.3)}50%{text-shadow:0 0 20px rgba(233,217,184,0.6)}}
+
+/* === 3D SCENE OVERLAY === */
+#three-container{pointer-events:none}
+#three-container canvas{pointer-events:none}
+.scene-overlay{position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;pointer-events:none;display:flex;flex-direction:column}
+.scene-overlay *{pointer-events:auto}
+.scene-nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:40px;padding:14px 0 12px;pointer-events:auto;opacity:0;animation:fadeSlideDown 0.8s ease 0.5s forwards;z-index:20;border-bottom:1px solid rgba(255,255,255,0.08);background:linear-gradient(to bottom,rgba(0,0,0,0.3),transparent)}
+.scene-nav-logo{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:14px;color:#FFFFFF;opacity:0.5;font-weight:300;letter-spacing:3px}
+.scene-nav-links{display:flex;align-items:center;gap:0;list-style:none;margin:0;padding:0}
+.scene-nav-links a{color:#FFFFFF;font-size:13px;font-weight:300;text-decoration:none;letter-spacing:2px;transition:all 0.4s;text-shadow:0 2px 8px rgba(0,0,0,0.4)}
+.scene-nav-links a:hover{color:#FFFFFF;text-shadow:0 0 20px rgba(255,255,255,0.3)}
+.scene-nav-links li+li::before{content:'\2022';color:rgba(255,255,255,0.15);padding:0 18px;font-size:4px}
+.scene-nav-btn{position:absolute;right:40px;top:50%;transform:translateY(-50%);pointer-events:auto}
+.scene-nav-btn a{color:rgba(255,255,255,0.7);font-size:10px;font-weight:300;text-decoration:none;letter-spacing:1px;transition:all 0.4s;text-shadow:0 2px 8px rgba(0,0,0,0.4);padding:6px 16px;border:1px solid rgba(255,255,255,0.2)}
+.scene-nav-btn a:hover{color:#FFFFFF;border-color:#FFFFFF;background:rgba(255,255,255,0.06)}
+.scene-hero{position:absolute;top:14%;right:5%;left:62%;max-width:none;text-align:right;opacity:0;transition:opacity 0.8s ease,transform 0.8s ease;transform:translateY(20px)}
+.scene-hero-visible{opacity:1;transform:translateY(0)}
+
+/* Scroll-triggered text overlays */
+.scene-scroll-text{position:absolute;left:60px;max-width:400px;text-align:left;opacity:0;transition:opacity 0.8s ease,transform 0.8s ease;transform:translateY(20px);pointer-events:none}
+.scene-scroll-text.visible{opacity:1;transform:translateY(0)}
+.scene-scroll-text.right{left:auto;right:60px;text-align:right}
+.scene-scroll-text .label{font-size:9px;color:rgba(255,255,255,0.4);letter-spacing:2px;margin-bottom:8px;font-weight:300}
+.scene-scroll-text h2{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:60px;font-weight:700;color:#FFFFFF;line-height:1.15;margin:0;text-shadow:0 4px 30px rgba(0,0,0,0.7)}
+.scene-scroll-text .sub{font-size:15px;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.8;margin-top:10px;text-shadow:0 2px 12px rgba(0,0,0,0.5)}
+.scene-scroll-text .line{width:70px;height:1px;background:linear-gradient(to left,rgba(255,255,255,0.5),transparent);margin:16px 0}
+.scene-hero-title{font-family:'Amiri','Noto Naskh Arabic',serif;font-size:clamp(28px,3vw,46px);font-weight:700;color:#FFFFFF;line-height:1.2;margin-bottom:12px;text-shadow:0 4px 24px rgba(0,0,0,0.7);animation:pulseGlow 4s ease 2s infinite}
+.scene-hero-sub{font-size:13px;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.8;text-shadow:0 2px 12px rgba(0,0,0,0.5);max-width:100%;text-align:right;margin:12px 0 0 auto}
+.scene-hero-line{width:60px;height:1px;background:linear-gradient(to left,rgba(255,255,255,0.4),transparent);margin:16px 0 16px auto}
+.scene-hero-btn{display:block;width:fit-content;border:1px solid rgba(255,255,255,0.35);color:#FFFFFF;padding:10px 26px;font-size:10px;letter-spacing:2px;text-decoration:none;transition:all 0.4s;margin:12px 0 0 auto;font-family:'Vazirmatn',Tahoma,serif;font-weight:300;background:rgba(0,0,0,0.15)}
+.scene-hero-btn:hover{background:rgba(255,255,255,0.1);border-color:#FFFFFF}
+
+/* === SCENE TEXT POSITIONS === */
+#st1{left:auto;right:60px;top:auto;bottom:8%}
+#st2{left:auto;right:8%;top:8%;bottom:auto}
+#st3{left:8%;right:auto;top:60%;bottom:auto;text-align:right}
+#st2 .line{margin:16px 0 16px auto}
+
+/* === 3D SCENE RESPONSIVE === */
+@media(max-width:1200px){
+  .scene-hero{max-width:560px}
+  .scene-hero-title{font-size:44px}
+  .scene-scroll-text h2{font-size:50px}
+}
+@media(max-width:768px){
+  #three-container{height:100vh;height:100dvh}
+  .scene-nav{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 0;padding:8px 6px}
+  .scene-nav-links{flex-wrap:wrap;justify-content:center;row-gap:2px}
+  .scene-nav-links a{font-size:11px;letter-spacing:1px}
+  .scene-nav-links li+li::before{padding:0 8px}
+  .scene-nav-btn{display:none}
+  .scene-hero{top:9%;left:6%;right:6%;bottom:auto;max-width:none;text-align:center}
+  .scene-hero-title{font-size:22px;line-height:1.3;white-space:normal}
+  .scene-hero-line{width:40px;margin:8px auto}
+  .scene-hero-sub{font-size:10.5px;max-width:none;line-height:1.5;text-align:center;margin:6px auto 0}
+  .scene-hero-btn{padding:7px 18px;font-size:9px;margin:8px auto 0}
+  .scene-scroll-text{left:6%;right:6%;max-width:none}
+  .scene-scroll-text h2{font-size:28px;line-height:1.3}
+  .scene-scroll-text .sub{font-size:11px;line-height:1.6;margin-top:6px}
+  .scene-scroll-text .line{width:50px;margin:10px 0}
+  #st1{left:6%;right:6%;top:auto;bottom:8%}
+  #st2{left:6%;right:6%;top:14%;bottom:auto}
+  #st3{left:6%;right:6%;top:auto;bottom:36%}
+}
+@media(max-width:400px){
+  .scene-hero-title{font-size:20px}
+  .scene-scroll-text h2{font-size:24px}
+  .scene-nav-links a{font-size:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-bg-mark">DE</div>
+  <div class="loader-frame">
+    <span class="fr f1"><i></i></span><span class="fr f2"><i></i></span>
+    <span class="fr f3"><i></i></span><span class="fr f4"><i></i></span>
+  </div>
+  <span class="loader-spark s1">✦</span>
+  <span class="loader-spark s2">❧</span>
+  <span class="loader-spark s3">◆</span>
+  <span class="loader-spark s4">✦</span>
+  <span class="loader-spark s5">❧</span>
+  <span class="loader-spark s6">◆</span>
+  <span class="loader-spark s7">✦</span>
+  <span class="loader-spark s8">❧</span>
+
+  <div class="loader-inner">
+    <div class="loader-emblem">
+      <div class="loader-rays"></div>
+      <img src="logo.png" alt="Deep Effect" class="loader-logo" />
+    </div>
+    <div class="loader-brand">Deep&nbsp;<em>Effect</em></div>
+    <div class="loader-kicker">این یک نمونه‌کار از <b>استودیو دیپ افکت</b> است</div>
+    <a class="loader-domain" href="https://deepeffect.ir" target="_blank" rel="noopener">DeepEffect.ir ↗</a>
+    <div class="loader-chips">
+      <span class="loader-chip chip-model">مدل سه‌بعدی <b id="chip-model">…</b></span>
+      <span class="loader-chip chip-img">تصاویر <b id="chip-img">…</b></span>
+    </div>
+    <div class="loader-bar-wrap"><div id="loader-bar-fill"></div></div>
+    <div class="loader-meta">
+      <span id="loader-status">در حال بارگذاری منابع ...</span>
+      <span id="loader-pct">۰٪</span>
+    </div>
+    <div class="loader-note">✦ &nbsp;لوازم آنتیک و کلکسیونی&nbsp; ✦</div>
+  </div>
+
+  <div class="loader-marquee"><div class="loader-marquee-track">
+    <span>DeepEffect.ir ✦ طراحی و توسعهٔ وب | Web Development ✦ منوی دیجیتال | Digital Menu ✦ قالب وردپرس | WordPress Template ✦ هوش مصنوعی | AI Automation ✦ پلتفرم اختصاصی ✦ </span>
+    <span>DeepEffect.ir ✦ طراحی و توسعهٔ وب | Web Development ✦ منوی دیجیتال | Digital Menu ✦ قالب وردپرس | WordPress Template ✦ هوش مصنوعی | AI Automation ✦ پلتفرم اختصاصی ✦ </span>
+  </div></div>
+</div>
+
+<!-- 3D SCENE CONTAINER -->
+<div id="three-container">
+  <div class="scene-overlay">
+    <nav class="scene-nav">
+      <ul class="scene-nav-links">
+        <li><a href="#">مجموعه‌ها</a></li>
+        <li><a href="#">مبلمان</a></li>
+        <li><a href="#">دکوراسیون</a></li>
+        <li><a href="#">کلکسیون</a></li>
+        <li><a href="#">درباره</a></li>
+      </ul>
+      <div class="scene-nav-btn"><a href="https://deepeffect.ir" target="_blank" rel="noopener">ورود به سایت Deep Effect</a></div>
+    </nav>
+    <div class="scene-hero" id="heroText">
+      <div class="scene-hero-title">کلکسیونی از ،<br>هر آن چه که اصالت دارد ...</div>
+      <div class="scene-hero-line"></div>
+      <div class="scene-hero-sub">مجموعه‌ای از نفیس‌ترین آثار آنتیک و اشیای کلکسیونی<br>برای خانه‌ای با اصالت</div>
+      <a href="#" class="scene-hero-btn">مشاهده مجموعه</a>
+    </div>
+
+    <!-- Scroll-triggered text overlays -->
+    <div class="scene-scroll-text right" id="st1">
+      <h2>هر قطعه<br>داستانی دارد</h2>
+      <div class="line"></div>
+      <div class="sub">از گذشته‌ای کهن تا امروز</div>
+    </div>
+    <div class="scene-scroll-text right" id="st2">
+      <h2>اصالتی که<br>ماندگار است</h2>
+      <div class="line"></div>
+      <div class="sub">با دقت انتخاب شده برای شما</div>
+    </div>
+    <div class="scene-scroll-text" id="st3">
+      <h2>گرمای گذشته<br>در خانه امروز</h2>
+      <div class="line"></div>
+      <div class="sub">مجموعه‌ای بی‌نظیر از آثار آنتیک</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCROLL HINT -->
+<div id="scroll-hint">
+  اسکرول کنید
+  <span id="scroll-hint-arrow">↓</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="content">
+  <div id="scroll-spacer"></div>
+
+  <div class="wrapper">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-top-row">
+      <div class="header-box header-box-left anim-fade-right" style="transition-delay:0.1s">
+        <div class="header-box-title">خبر فوری</div>
+        <div class="header-box-text">لوازم کلکسیونی موجود شد</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div class="masthead-ornament">◈ ◈ ◈</div>
+        <div class="masthead" style="opacity:0;animation:fadeSlideDown 0.8s ease 0.3s forwards">Deep Effect</div>
+        <span class="masthead-sub" style="opacity:0;animation:fadeSlideDown 0.6s ease 0.6s forwards">فروشگاه لوازم آنتیک و کالکشن</span>
+        <div class="masthead-ornament" style="margin-top:6px">❧ ⁂ ❧</div>
+      </div>
+      <div class="header-box header-box-right anim-fade-left" style="transition-delay:0.1s">
+        <div class="header-box-title">ارسال رایگان</div>
+        <div class="header-box-text">به سراسر کشور با پست پیشتاز</div>
+        <div class="header-box-text">سفارش‌های بالای یک میلیون تومان</div>
+      </div>
+    </div>
+    <div class="double-divider"></div>
+    <div class="double-divider"></div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="nav anim-fade-up">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="#">صفحه اصلی</a></li>
+        <li><a href="#">محصولات</a></li>
+        <li><a href="#">دسته‌بندی‌ها</a></li>
+        <li><a href="#">پیشنهاد ویژه</a></li>
+        <li><a href="#">درباره ما</a></li>
+        <li><a href="#">تماس با ما</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="nav-icons">
+          <a href="#">⟐ ورود</a>
+          <a href="#">🛒 سبد خرید (۰)</a>
+        </div>
+        <form class="nav-search" onsubmit="return false">
+          <button type="submit">🔍</button>
+          <input type="text" placeholder="جستجوی لوازم آنتیک ...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="sidebar-left anim-fade-right">
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">☰</span> دسته‌بندی محصولات</div>
+      <ul class="cat-list">
+        <li><a href="#">چراغ نفتی و فانوس</a><span class="cat-count">۱۴</span></li>
+        <li><a href="#">ظروف مسی و برنجی</a><span class="cat-count">۱۸</span></li>
+        <li><a href="#">سماور و کتری آنتیک</a><span class="cat-count">۹</span></li>
+        <li><a href="#">اتوی ذغالی و پهن</a><span class="cat-count">۷</span></li>
+        <li><a href="#">رادیو و گرامافون</a><span class="cat-count">۶</span></li>
+        <li><a href="#">چرخ خیاطی قدیمی</a><span class="cat-count">۵</span></li>
+        <li><a href="#">ساعت دیواری و رومیزی</a><span class="cat-count">۱۲</span></li>
+        <li><a href="#">تلفن و لوازم تحریر</a><span class="cat-count">۱۰</span></li>
+      </ul>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">✦</span> محصول ویژه</div>
+      <div class="featured-product">
+        <div class="featured-product-img">
+          <img src="samovar.webp" alt="سماور روسی برنجی آنتیک">
+        </div>
+        <div class="featured-product-title">سماور روسی برنجی آنتیک</div>
+        <div class="featured-product-price">۳,۲۰۰,۰۰۰ تومان</div>
+        <button class="featured-product-btn">مشاهده محصول</button>
+      </div>
+    </div>
+    <div class="ad-box">
+      <div class="ad-discount">٪۵۰</div>
+      <div class="ad-sub">تخفیف ویژه</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:1.6;margin-bottom:12px">اولین خرید لوازم آنتیک<br>با تخفیف پنجاه درصدی</div>
+      <button class="ad-btn">استفاده از کد تخفیف</button>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">✶</span> جدیدترین کلکسیون‌ها</div>
+      <ul class="cat-list">
+        <li><a href="#">آینه‌های دست‌ساز ونیزی</a><span class="cat-count">۴</span></li>
+        <li><a href="#">قاب عکس‌های عتیقه</a><span class="cat-count">۸</span></li>
+        <li><a href="#">مجسمه‌های برنزی</a><span class="cat-count">۶</span></li>
+        <li><a href="#">جعبه‌های جواهرات قدیمی</a><span class="cat-count">۵</span></li>
+      </ul>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">⌘</span> برچسب‌های پرطرفدار</div>
+      <div class="tag-cloud">
+        <span class="tag">آنتیک اروپایی</span>
+        <span class="tag">برنجی</span>
+        <span class="tag">قرن بیستم</span>
+        <span class="tag">دست‌ساز</span>
+        <span class="tag">کلکسیونی</span>
+        <span class="tag">ونیزی</span>
+        <span class="tag">مسی</span>
+        <span class="tag">عتیقه</span>
+      </div>
+    </div>
+    <div class="ad-box" style="background:linear-gradient(180deg, #E1CFAC 0%, #D4C29E 100%)">
+      <div style="font-family:'Amiri',serif;font-size:22px;font-weight:700;color:#1D1814;margin-bottom:4px">بسته‌بندی هدیه</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:1.6;margin-bottom:12px">تمامی محصولات با<br>بسته‌بندی اختصاصی هدیه ارسال می‌شوند</div>
+      <div style="font-size:28px;color:#1D1814;opacity:0.15;margin-bottom:8px">❧</div>
+    </div>
+    <div class="newspaper-box stretch-box">
+      <div class="box-title"><span class="box-title-icon">◆</span> کم‌یاب‌ترین محصول</div>
+      <div class="featured-product">
+        <div class="featured-product-img"><img src="gramophone.webp" alt="گرامافون نایاب"></div>
+        <div class="featured-product-title">گرامافون نایاب ویکتوریا</div>
+        <div class="featured-product-price">۹,۸۰۰,۰۰۰ تومان</div>
+        <button class="featured-product-btn">مشاهده محصول</button>
+        <div class="rare-desc">این دستگاه در شمار بسیار اندکی باقی‌مانده و تنها <b>۳ نمونه</b> از آن در جهان وجود دارد. بدنه چوبی منبت‌کاری‌شده با ماردون دست‌ساز برنزی، صدایی گرم و اصیل از قرن نوزدهم را بازتولید می‌کند. به دلیل نایاب بودن، فروش این قطعه تنها با تاییدیه کارشناسی و گواهی اصالت انجام می‌پذیرد.</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CENTER -->
+  <main class="anim-fade-up">
+    <div class="hero anim-fade-up">
+      <div class="hero-category-tag">✦ کلکسیون دیپ افکت</div>
+      <h1 class="hero-headline">فروشگاه لوازم آنتیک و کلکسیونی دیپ افکت</h1>
+      <p class="hero-deck">مجموعه‌ای از نفیس‌ترین لوازم آنتیک و کلکسیونیِ جهان، گردآوری شده از کهن‌ترین بازارهای اروپا و آسیا. هر قطعه، داستانی از گذشته را روایت می‌کند.</p>
+      <div class="hero-image" style="background-image:url('hero-image.webp')">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(233,217,184,0.08);font-size:80px;font-family:'Amiri',serif;letter-spacing:8px">☩</div>
+        <div style="position:absolute;bottom:15%;left:10%;width:40%;height:35%;border:1px solid rgba(233,217,184,0.08);border-radius:2px"></div>
+        <div style="position:absolute;bottom:18%;left:25%;width:15%;height:30%;border:1px solid rgba(233,217,184,0.06);border-radius:2px"></div>
+        <div style="position:absolute;bottom:22%;right:20%;width:28%;height:25%;border:1px solid rgba(233,217,184,0.07);border-radius:2px"></div>
+        <div style="position:absolute;bottom:25%;right:28%;width:8%;height:18%;border:1px solid rgba(233,217,184,0.05);border-radius:2px"></div>
+        <div class="hero-image-overlay"><div class="hero-image-caption">آشپزخانه قدیمی — ایتالیا، اوایل قرن بیستم</div></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <a href="#" class="hero-btn">مشاهده مجموعه</a>
+        <span style="font-size:10px;color:#8B7760">بیش از ۱۰۰ قلم لوازم آنتیک</span>
+      </div>
+    </div>
+
+    <div class="single-divider"></div>
+
+    <div class="section-title-wrap anim-fade-up"><div class="section-title">پرفروش‌ترین لوازم آنتیک</div></div>
+    <div class="products-grid">
+      <div class="product-card anim-fade-up" style="transition-delay:0.05s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="lamp.webp" alt="چراغ نفتی"><div class="product-badge">پرفروش</div></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">چراغ نفتی</div>
+          <div class="product-card-title">چراغ نفتی شیشه‌ای آنتیک</div>
+          <div class="product-card-desc">چراغ نفتی والور با فتیله پهن، شیشه دودی دست‌دم، بدنه برنجی، ساخت آلمان ۱۹۲۰</div>
+          <div class="product-card-price">۱,۸۵۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.1s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="samovar.webp" alt="سماور برنجی"><div class="product-badge">محدود</div></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">سماور</div>
+          <div class="product-card-title">سماور برنجی روسی آنتیک</div>
+          <div class="product-card-desc">سماور برنجی با شیر برنجی، بدنه قلمزنی شده، ساخت تولا ۱۸۹۰</div>
+          <div class="product-card-price">۳,۲۰۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.15s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="pot.webp" alt="دیگ مسی"></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ظروف مسی</div>
+          <div class="product-card-title">دیگ مسی قدیمی دست‌ساز</div>
+          <div class="product-card-desc">مس خالص چکش‌کاری شده، با دسته آهنی، قلع‌کوبی شده، ساخت اصفهان</div>
+          <div class="product-card-price">۲,۴۵۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.2s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="iron.webp" alt="اتوی ذغالی"></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">اتو</div>
+          <div class="product-card-title">اتوی ذغالی قدیمی</div>
+          <div class="product-card-desc">اتوی ذغالی چدنی با دسته چوبی، ساخت کارخانه ذوب‌آهن، کاملاً سالم</div>
+          <div class="product-card-price">۹۸۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.25s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="gramophone.webp" alt="گرامافون"><div class="product-badge">کمیاب</div></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">گرامافون</div>
+          <div class="product-card-title">گرامافون جعبه‌ای آنتیک</div>
+          <div class="product-card-desc">گرامافون مکانیکی با شیپور برنجی، صفحه‌گردان فنری، ساخت انگلیس ۱۹۱۰</div>
+          <div class="product-card-price">۶,۸۰۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.3s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="clock.webp" alt="ساعت دیواری"></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ساعت</div>
+          <div class="product-card-title">ساعت دیواری وزنه‌ای</div>
+          <div class="product-card-desc">ساعت دیواری کوکی با وزنه و آونگ، بدنه چوب گردو، ساخت آلمان ۱۸۸۰</div>
+          <div class="product-card-price">۴,۵۰۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="single-divider"></div>
+    <div class="section-title-wrap anim-fade-up"><div class="section-title">تازه‌های بازار</div></div>
+    <div class="products-grid">
+      <div class="product-card anim-fade-up" style="transition-delay:0.05s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="telephone.webp" alt="تلفن آنتیک"></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">تلفن</div>
+          <div class="product-card-title">تلفن آنتیک بلک‌باکلیت</div>
+          <div class="product-card-desc">تلفن رومیزی با صفحه گردان، بدنه باکلیت، زنگ مکانیکی، ساخت ۱۹۵۰</div>
+          <div class="product-card-price">۱,۲۰۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.1s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="scale.webp" alt="ترازوی قدیمی"></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">ترازو</div>
+          <div class="product-card-title">ترازوی قدیمی عقربه‌ای</div>
+          <div class="product-card-desc">ترازوی آشپزخانه عقربه‌ای، بدنه چوبی و برنجی، ساخت فرانسه</div>
+          <div class="product-card-price">۸۵۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="product-card anim-fade-up" style="transition-delay:0.15s">
+        <div class="product-card-img-wrap">
+          <div class="product-card-img"><img src="sewing-machine.webp" alt="چرخ خیاطی"></div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-card-category">چرخ خیاطی</div>
+          <div class="product-card-title">چرخ خیاطی قدیمی سینگر</div>
+          <div class="product-card-desc">چرخ خیاطی مکانیکی سینگر، پایه چدنی، موتوره، ساخت آمریکا ۱۹۲۰</div>
+          <div class="product-card-price">۵,۲۰۰,۰۰۰ تومان</div>
+          <button class="product-card-btn">افزودن به سبد</button>
+        </div>
+      </div>
+      <div class="promo-box anim-fade-up" style="transition-delay:0.2s">
+        <div class="promo-ornament">❧</div>
+        <div class="promo-head">
+          <div class="promo-title">دنبال گنجینه‌ای خاص هستید؟</div>
+          <div class="promo-text">بیش از ۱۰۰ قلم لوازم آنتیک و کلکسیونی دیگر در انبار دیپ افکت موجود است؛ از چراغ‌های نفتی، سماور و گرامافون گرفته تا ساعت‌های دیواری و تلفن‌های قدیمی.</div>
+        </div>
+        <div class="promo-foot">
+          <span class="promo-note">مشاورهٔ خرید: ۰۲۱-۱۲۳۴۵۶۷۸</span>
+          <a href="#" class="promo-btn">مشاهدهٔ همهٔ محصولات</a>
+        </div>
+      </div>
+    </div>
+    <div class="single-divider"></div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="sidebar-right anim-fade-left">
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">✓</span> اصالت و اعتماد</div>
+      <div class="trust-box">
+        <div class="trust-item">
+          <div class="trust-icon">◈</div>
+          <div class="trust-content">
+            <div class="trust-title">ضمانت اصالت کالا</div>
+            <div class="trust-text">تمامی محصولات با ضمانت اصالت و سلامت فیزیکی ارائه می‌شوند</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">◈</div>
+          <div class="trust-content">
+            <div class="trust-title">ارسال سریع و مطمئن</div>
+            <div class="trust-text">ارسال به سراسر کشور با پست پیشتاز و بسته‌بندی حرفه‌ای</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">◈</div>
+          <div class="trust-content">
+            <div class="trust-title">گارانتی بازگشت کالا</div>
+            <div class="trust-text">تا هفت روز فرصت بازگشت کالا در صورت عدم رضایت</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">◈</div>
+          <div class="trust-content">
+            <div class="trust-title">پرداخت امن</div>
+            <div class="trust-text">پرداخت آنلاین با درگاه‌های امن بانکی و پشتیبانی از تمام کارت‌ها</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">✉</span> عضویت در خبرنامه</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:1.6;margin-bottom:10px">اولین نفر باشید از تازه‌ترین لوازم آنتیک و تخفیف‌های ویژه با خبر شوید.</div>
+      <form class="newsletter-form" onsubmit="return false">
+        <input type="email" placeholder="آدرس ایمیل خود را وارد کنید ...">
+        <button type="submit">عضویت در خبرنامه</button>
+      </form>
+    </div>
+    <div class="ad-box" style="background:linear-gradient(180deg, #E1CFAC 0%, #D4C29E 100%)">
+      <div style="font-family:'Amiri',serif;font-size:24px;font-weight:700;color:#1D1814;margin-bottom:4px">ارسال رایگان</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:1.6;margin-bottom:12px">برای سفارش‌های بالای<br>یک میلیون تومان</div>
+      <div style="font-size:28px;color:#1D1814;opacity:0.15;margin-bottom:8px">⌘</div>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">☷</span> اطلاعات تماس</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:2">تهران، خیابان ولیعصر، بازار آنتیک<br>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸<br>ایمیل: info@deepeffect.ir<br>ساعات کار: ۹ صبح تا ۸ شب</div>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">▦</span> آمار دیپ افکت</div>
+      <div class="stat-row"><span class="stat-num">۱۲,۴۸۰</span><span class="stat-label">محصول فروخته‌شده</span></div>
+      <div class="stat-row"><span class="stat-num">۹,۳۲۰</span><span class="stat-label">مشتری راضی</span></div>
+      <div class="stat-row"><span class="stat-num">۳۸</span><span class="stat-label">کشور مقصد ارسال</span></div>
+      <div class="stat-row"><span class="stat-num">٪۹۹</span><span class="stat-label">رضایت از اصالت کالا</span></div>
+    </div>
+    <div class="ad-box" style="background:linear-gradient(180deg, #E1CFAC 0%, #D4C29E 100%)">
+      <div style="font-family:'Amiri',serif;font-size:22px;font-weight:700;color:#1D1814;margin-bottom:4px">گارانتی اصالت</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:1.6;margin-bottom:12px">هر محصول با گواهی<br>اصالت و شناسنامه کالا تحویل داده می‌شود</div>
+      <div style="font-size:28px;color:#1D1814;opacity:0.15;margin-bottom:8px">✓</div>
+    </div>
+    <div class="newspaper-box">
+      <div class="box-title"><span class="box-title-icon">✎</span> راهنمای نگهداری</div>
+      <div style="font-size:10px;color:#5A4A38;line-height:1.9">▪ تمیز کردن سطوح برنجی با پارچه نرم<br>▪ دور نگه داشتن از رطوبت مستقیم<br>▪ استفاده از واکس مخصوص چوب عتیقه<br>▪ نگهداری در دمای متعادل اتاق</div>
+    </div>
+    <div class="newspaper-box stretch-box">
+      <div class="box-title"><span class="box-title-icon">◆</span> کم‌یاب‌ترین محصول</div>
+      <div class="featured-product">
+        <div class="featured-product-img"><img src="clock.webp" alt="ساعت نایاب"></div>
+        <div class="featured-product-title">ساعت نایاب اشترازی</div>
+        <div class="featured-product-price">۷,۵۰۰,۰۰۰ تومان</div>
+        <button class="featured-product-btn">مشاهده محصول</button>
+        <div class="rare-desc">ساخت دست استادکاران اشترازی با مکانیزم قرقوره‌ای دست‌ساز که تنها در <b>۲ حلقه</b> باقی‌مانده است. صفحه مینای لعابی دست‌نقاشی و قاب برنجی نقره‌کوب، این ساعت را به یکی از کمیاب‌ترین قطعات مجموعه تبدیل کرده. به دلیل یکتا بودن، پیش از خرید بازدید حضوری از گنجینه دیپ افکت توصیه می‌شود.</div>
+      </div>
+    </div>
+  </aside>
+
+  </div><!-- /main-grid -->
+
+  <!-- FOOTER -->
+  <footer class="footer anim-fade-up">
+    <div class="footer-ornament">❦ ❧ ❦</div>
+    <div class="footer-grid">
+      <div class="footer-col anim-fade-up">
+        <div class="footer-title">خدمات مشتریان</div>
+        <ul class="footer-links">
+          <li><a href="#">راهنمای خرید</a></li>
+          <li><a href="#">روش‌های ارسال</a></li>
+          <li><a href="#">ضمانت و گارانتی</a></li>
+          <li><a href="#">شرایط بازگشت کالا</a></li>
+          <li><a href="#">سوالات متداول</a></li>
+        </ul>
+      </div>
+      <div class="footer-col anim-fade-up" style="transition-delay:0.1s">
+        <div class="footer-title">درباره ما</div>
+        <div class="footer-text">Deep Effect از سال ۱۳۸۵ با هدف گردآوری نفیس‌ترین لوازم آنتیک و کلکسیونی از سراسر جهان فعالیت می‌کند. هر کالای موجود در فروشگاه ما دارای شناسنامه اصالت است.</div>
+      </div>
+      <div class="footer-col anim-fade-up" style="transition-delay:0.2s">
+        <div class="footer-title">شبکه‌های اجتماعی</div>
+        <div class="footer-social">
+          <a href="#" title="اینستاگرام">📷</a>
+          <a href="#" title="تلگرام">✈</a>
+          <a href="#" title="توییتر">🐦</a>
+          <a href="#" title="یوتیوب">▶</a>
+          <a href="#" title="پینترست">📌</a>
+        </div>
+        <div style="margin-top:14px">
+          <div class="footer-title" style="font-size:11px">نماد اعتماد</div>
+          <div style="font-size:10px;color:#5A4A38;line-height:1.6">دارای نماد اعتماد الکترونیکی<br>عضو اتحادیه کسب و کارهای آنلاین</div>
+        </div>
+      </div>
+      <div class="footer-col anim-fade-up" style="transition-delay:0.3s">
+        <div class="footer-title">خبرنامه</div>
+        <div class="footer-text" style="margin-bottom:8px">با عضویت در خبرنامه، از آخرین لوازم آنتیک و تخفیف‌های ویژه باخبر شوید.</div>
+        <form class="newsletter-form" onsubmit="return false">
+          <input type="email" placeholder="ایمیل خود را وارد کنید ...">
+          <button type="submit">عضویت</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© ۱۳۸۵ — ۱۴۰۵ Deep Effect · تمامی حقوق محفوظ است</div>
+      <div class="footer-bottom-text">طراحی و توسعه با افتخار در تهران</div>
+    </div>
+  </footer>
+
+  </div><!-- /wrapper -->
+</div><!-- /content -->
+
+<script src="vendor/three.min.js"></script>
+<script src="vendor/GLTFLoader.js"></script>
+<script>
+// Wait for GLTFLoader to define itself
+(function waitForGLTF() {
+  if (typeof THREE !== 'undefined' && THREE.GLTFLoader) {
+    document.dispatchEvent(new Event('gltfReady'));
+  } else {
+    setTimeout(waitForGLTF, 100);
+  }
+})();
+</script>
+
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+
+const loaderEl = document.getElementById('loader');
+const loaderStart = performance.now();
+const isHold = location.search.indexOf('loader=hold') !== -1;
+const html = document.documentElement;
+const container = document.getElementById('three-container');
+const content = document.getElementById('content');
+const scrollHint = document.getElementById('scroll-hint');
+const spacer = document.getElementById('scroll-spacer');
+const wrapperEl = content.querySelector('.wrapper');
+let contentRevealed = false;
+const loaderFill = document.getElementById('loader-bar-fill');
+const loaderStatus = document.getElementById('loader-status');
+const loaderPct = document.getElementById('loader-pct');
+
+// --- Loader: stays until BOTH the 3D model and every image are downloaded ---
+let modelProgress = 0, imgProgress = 0;
+let modelReady = false, imgReady = false;
+let loaderHidden = false;
+const PERSIAN_DIGITS = '۰۱۲۳۴۵۶۷۸۹';
+function toPersian(n) {
+  return String(n).replace(/\d/g, function (d) { return PERSIAN_DIGITS[+d]; });
+}
+function updateLoaderUI() {
+  const overall = Math.min(Math.round((modelProgress + imgProgress) / 2), 100);
+  loaderFill.style.width = overall + '%';
+  loaderPct.textContent = toPersian(overall) + '٪';
+  let status = 'در حال بارگذاری منابع ...';
+  if (modelReady && !imgReady) status = 'در حال بارگذاری تصاویر ...';
+  else if (imgReady && !modelReady) status = 'در حال آماده‌سازی مدل سه‌بعدی ...';
+  loaderStatus.textContent = status;
+  const cm = document.getElementById('chip-model');
+  const ci = document.getElementById('chip-img');
+  if (cm) {
+    cm.textContent = modelReady ? '✓' : toPersian(Math.min(modelProgress, 99)) + '٪';
+    cm.parentElement.classList.toggle('done', modelReady);
+  }
+  if (ci) {
+    ci.textContent = imgReady ? '✓' : toPersian(Math.min(imgProgress, 99)) + '٪';
+    ci.parentElement.classList.toggle('done', imgReady);
+  }
+}
+function hideLoaderWhenReady() {
+  if (loaderHidden || !(modelReady && imgReady)) return;
+  // Preview mode: ?loader=hold keeps the curtain up so the design can be admired
+  if (isHold) {
+    // Force stay visible for manual review
+    return;
+  }
+  // Keep the curtain up for at least 1.5s so it never just blinks (also when cached)
+  const remain = 1500 - (performance.now() - loaderStart);
+  if (remain > 0) { setTimeout(hideLoaderWhenReady, Math.min(remain, 250)); return; }
+  loaderHidden = true;
+  loaderStatus.textContent = 'آماده است ✦';
+  loaderPct.textContent = '۱۰۰٪';
+  loaderFill.style.width = '100%';
+  loaderEl.classList.add('loaded');
+  setTimeout(() => loaderEl.remove(), 900);
+}
+// Preload & track every image (product photos, hero, scene background)
+(function preloadAllImages() {
+  const seen = {};
+  const srcs = [];
+  document.querySelectorAll('img').forEach(function (im) {
+    const s = im.getAttribute('src');
+    if (s && !seen[s]) { seen[s] = 1; srcs.push(s); }
+  });
+  ['hero-image.webp', 'scene-background.webp'].forEach(function (s) {
+    if (!seen[s]) { seen[s] = 1; srcs.push(s); }
+  });
+  const total = srcs.length;
+  if (!total) { imgReady = true; return; }
+  let done = 0;
+  srcs.forEach(function (src) {
+    const im = new Image();
+    im.onload = im.onerror = function () {
+      done++;
+      imgProgress = Math.round((done / total) * 100);
+      if (done >= total) { imgReady = true; imgProgress = 100; }
+      updateLoaderUI();
+      hideLoaderWhenReady();
+    };
+    im.src = src;
+  });
+})();
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.set(4, 2.5, 5);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.4;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+container.appendChild(renderer.domElement);
+
+// Mouse tracking for model head rotation
+let mouseX = 0, mouseY = 0;
+let targetRotX = 0, targetRotY = 0;
+let curRotX = 0, curRotY = 0;
+let origRotX = 0, origRotY = 0;
+let modelRef = null;
+let lastPointer = 0; // ms timestamp of the last pointer/mouse input
+function handlePointer(e) {
+  mouseX = ((e.clientX || 0) / window.innerWidth) * 2 - 1;
+  mouseY = ((e.clientY || 0) / window.innerHeight) * 2 - 1;
+  targetRotY = mouseX * 0.3;
+  targetRotX = 0;
+  lastPointer = performance.now();
+}
+document.addEventListener('mousemove', handlePointer);
+document.addEventListener('pointermove', handlePointer);
+document.addEventListener('touchmove', handlePointer, { passive: true });
+document.addEventListener('touchstart', handlePointer, { passive: true });
+// Gentle idle sway — mostly for touch devices where there is no mouse to follow.
+// Very slow: a full left→right→left cycle takes ~16s, each direction ~8s, ±~10°.
+const SWAY_AMPLITUDE_Y = 0.18;    // ~10.3° yaw
+const SWAY_AMPLITUDE_X = 0.045;   // ~2.6° subtle tilt
+const SWAY_PERIOD_MS = 16000;
+const SWAY_X_PERIOD_MS = 22000;
+const SWAY_IDLE_MS = 1200;        // resume swaying 1.2s after the last pointer input
+
+// Realistic lighting (less ambient = less cartoony)
+scene.background = new THREE.Color(0xE9D9B8);
+var bgTexture = null;
+(function() {
+  try {
+    var bgLoader = new THREE.TextureLoader();
+    bgLoader.load('scene-background.webp', function(t) {
+      bgTexture = t;
+      scene.background = t;
+    });
+  } catch(e) {}
+})();
+
+const ambientLight = new THREE.AmbientLight(0xFFE4C4, 0.08);
+scene.add(ambientLight);
+
+const hemiLight = new THREE.HemisphereLight(0xFFE4C4, 0x8B7760, 0.15);
+scene.add(hemiLight);
+
+const keyLight = new THREE.DirectionalLight(0xFFDEAD, 3.0);
+keyLight.position.set(3, 5, 4);
+keyLight.castShadow = true;
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0xC8B898, 0.5);
+fillLight.position.set(-2.5, 1.5, 3);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0xFFE4C4, 1.2);
+rimLight.position.set(-1, 2, -5);
+scene.add(rimLight);
+
+const backLight = new THREE.DirectionalLight(0xE9D9B8, 0.3);
+backLight.position.set(0, 0.5, -6);
+scene.add(backLight);
+
+// Camera path
+let camCurve, lookCurve;
+let sceneMaxDim = 1;
+const sceneCenter = new THREE.Vector3();
+const tempCam = new THREE.Vector3();
+const tempLook = new THREE.Vector3();
+const camPts = [], lookPts = [];
+
+function easeInOutCubic(t) {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+function easeInOutSine(t) {
+  return -(Math.cos(Math.PI * t) - 1) / 2;
+}
+function smoothstep(edge0, edge1, x) {
+  const t = Math.min(Math.max((x - edge0) / (edge1 - edge0), 0), 1);
+  return t * t * (3 - 2 * t);
+}
+function quartEase(t) {
+  return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+}
+
+function buildCurves(center, size, maxDim) {
+  camPts.length = 0; lookPts.length = 0;
+  sceneMaxDim = maxDim;
+  sceneCenter.copy(center);
+  var d = 1.15;
+  camPts.push(
+    new THREE.Vector3(center.x + maxDim * 0.5 * d, center.y + maxDim * 0.35, center.z + maxDim * 1.8 * d),
+    new THREE.Vector3(center.x + maxDim * 1.1 * d, center.y + maxDim * 0.2, center.z + maxDim * 0.6 * d),
+    new THREE.Vector3(center.x + maxDim * 0.7 * d, center.y + maxDim * 0.4, center.z - maxDim * 0.4 * d),
+    new THREE.Vector3(center.x + maxDim * 0.5 * d, center.y + maxDim * 0.45, center.z - maxDim * 0.55 * d)
+  );
+  lookPts.push(
+    new THREE.Vector3(center.x, center.y + size.y * 0.15, center.z),
+    new THREE.Vector3(center.x, center.y + size.y * 0.1, center.z + maxDim * 0.05),
+    new THREE.Vector3(center.x, center.y + size.y * 0.08, center.z + maxDim * 0.15),
+    new THREE.Vector3(center.x, center.y - size.y * 0.05, center.z)
+  );
+  camCurve = new THREE.CatmullRomCurve3(camPts);
+  lookCurve = new THREE.CatmullRomCurve3(lookPts);
+}
+
+function updateScene() {
+  const spacerHeight = spacer.offsetHeight || window.innerHeight * 4;
+  const scrollY = window.scrollY;
+  const progress = Math.min(scrollY / spacerHeight, 1);
+  const orbitP = Math.min(progress, 0.38);
+  const eased = Math.min(1, easeInOutSine(orbitP) * 1.53);
+  const lastProgress = updateScene._lastProgress || 0;
+  updateScene._lastProgress = progress;
+
+  if (camCurve) {
+    camCurve.getPointAt(eased, tempCam);
+    lookCurve.getPointAt(eased, tempLook);
+    const zoomT = smoothstep(0.38, 0.52, progress);
+    if (zoomT > 0) {
+      tempCam.lerp(sceneCenter, zoomT * 0.72);
+    }
+    camera.position.copy(tempCam);
+    camera.lookAt(tempLook);
+  }
+
+  // Background zoom with scroll (cover-fit, no edge stretching)
+  if (bgTexture && bgTexture.image) {
+    var screenAspect = window.innerWidth / window.innerHeight;
+    var imgAspect = bgTexture.image.width / bgTexture.image.height;
+    var rx, ry;
+    if (screenAspect > imgAspect) {
+      rx = 1; ry = imgAspect / screenAspect;
+    } else {
+      rx = screenAspect / imgAspect; ry = 1;
+    }
+    var zoom = 1 - progress * 0.12;
+    var repX = rx * zoom;
+    var repY = ry * zoom;
+    bgTexture.wrapS = bgTexture.wrapT = THREE.ClampToEdgeWrapping;
+    bgTexture.repeat.set(repX, repY);
+    bgTexture.offset.set((1 - repX) / 2, (1 - repY) / 2);
+  }
+
+  // Scroll-triggered text overlays
+  var st1 = document.getElementById('st1');
+  var st2 = document.getElementById('st2');
+  var st3 = document.getElementById('st3');
+  var heroText = document.getElementById('heroText');
+  if (heroText) heroText.classList.toggle('scene-hero-visible', progress < 0.1);
+  if (st1) st1.classList.toggle('visible', progress >= 0.12);
+  if (st2) st2.classList.toggle('visible', progress >= 0.16);
+  if (st3) st3.classList.toggle('visible', progress >= 0.32);
+
+  if (modelRef && container.style.display !== 'none') {
+    var nowMs = performance.now();
+    if (nowMs - lastPointer > SWAY_IDLE_MS) {
+      targetRotY = Math.sin((nowMs * 2 * Math.PI) / SWAY_PERIOD_MS) * SWAY_AMPLITUDE_Y;
+      targetRotX = Math.sin((nowMs * 2 * Math.PI) / SWAY_X_PERIOD_MS) * SWAY_AMPLITUDE_X;
+    }
+    curRotX += (targetRotX - curRotX) * 0.018;
+    curRotY += (targetRotY - curRotY) * 0.018;
+    modelRef.rotation.x = origRotX + curRotX;
+    modelRef.rotation.y = origRotY + curRotY;
+  }
+
+  const opacity = 1 - smoothstep(0.40, 0.60, progress);
+  container.style.opacity = opacity;
+  if (opacity < 0.01) {
+    container.style.display = 'none';
+    container.style.pointerEvents = 'none';
+  } else {
+    container.style.display = 'block';
+    container.style.pointerEvents = 'none';
+  }
+
+  const hintOpacity = 1 - smoothstep(0.05, 0.25, progress);
+  scrollHint.style.opacity = hintOpacity;
+  if (hintOpacity < 0.01) scrollHint.classList.add('hidden');
+
+  const contentOpacity = smoothstep(0.40, 0.60, progress);
+  content.style.opacity = contentOpacity;
+  if (contentOpacity > 0.01) {
+    content.classList.add('visible');
+    document.body.style.background = '#E9D9B8';
+    // Deterministic reveal of the elements already near/inside the viewport once the
+    // scene is gone (safety net for the IntersectionObserver, covers jumps/anchors)
+    if (contentOpacity >= 0.999 && !contentRevealed) {
+      contentRevealed = true;
+      var revealVH = window.innerHeight;
+      document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-in').forEach(function (el) {
+        if (el.getBoundingClientRect().top < revealVH * 1.15) el.classList.add('visible');
+      });
+    }
+  }
+
+  renderer.render(scene, camera);
+  requestAnimationFrame(updateScene);
+}
+
+// Load model (waits for GLTFLoader to be ready)
+let modelLoaded = false;
+let progressTracked = 0;
+
+function loadModel() {
+  const gltfLoader = new THREE.GLTFLoader();
+  gltfLoader.load('gentleman_reading_news_paper.glb',
+  (gltf) => {
+    var rawModel = gltf.scene;
+
+    // Center model in a pivot group so rotation happens around its center
+    var box = new THREE.Box3().setFromObject(rawModel);
+    var center = box.getCenter(new THREE.Vector3());
+    var size = box.getSize(new THREE.Vector3());
+    var maxDim = Math.max(size.x, size.y, size.z);
+
+    var pivot = new THREE.Group();
+    rawModel.position.set(-center.x, -center.y, -center.z);
+    pivot.add(rawModel);
+    pivot.scale.set(0.88, 0.88, 0.88);
+    scene.add(pivot);
+
+    modelRef = pivot;
+    origRotX = pivot.rotation.x;
+    origRotY = pivot.rotation.y;
+
+    buildCurves(new THREE.Vector3(0, 0, 0), size, maxDim);
+    camCurve.getPoint(0, tempCam);
+    lookCurve.getPoint(0, tempLook);
+    camera.position.copy(tempCam);
+    camera.lookAt(tempLook);
+
+    modelLoaded = true;
+    modelReady = true;
+    modelProgress = 100;
+    updateLoaderUI();
+    hideLoaderWhenReady();
+  },
+  (xhr) => {
+    if (xhr.total > 0) {
+      modelProgress = Math.min((xhr.loaded / xhr.total) * 100, 100);
+    } else {
+      modelProgress = Math.min(progressTracked + 5, 95);
+      progressTracked += 2;
+    }
+    updateLoaderUI();
+  },
+  (err) => {
+    console.error('GLB load error:', err);
+    loaderEl.innerHTML = '<div style="text-align:center;color:#5A4A38;font-size:14px">خطا در بارگذاری مدل<br><span style="font-size:10px;opacity:0.6">مطمئن شوید فایل gentleman_reading_news_paper.glb در کنار index.html قرار دارد</span></div>';
+  }
+);
+}
+
+document.addEventListener('gltfReady', loadModel);
+// Also try loading immediately in case GLTFLoader already loaded
+if (typeof THREE !== 'undefined' && THREE.GLTFLoader) loadModel();
+
+function onResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener('resize', onResize);
+
+updateScene();
+
+// Fallback: if model fails to load after 8s, just show content
+setTimeout(() => {
+  if (!modelLoaded && !loaderEl.innerHTML.includes('خطا')) {
+    modelReady = true; modelProgress = 100; updateLoaderUI();
+    if (!isHold) hideLoaderWhenReady();
+  }
+}, 8000);
+
+});
+
+// Scroll-triggered animations
+document.addEventListener('DOMContentLoaded', function() {
+  var animEls = document.querySelectorAll('.anim-fade-up, .anim-fade-left, .anim-fade-right, .anim-scale-in');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    animEls.forEach(function(el) { obs.observe(el); });
+  } else {
+    animEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+});
+</script>
+
+</body>
+</html>
