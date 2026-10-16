@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:auto;overscroll-behavior:none}
+html,body{max-width:100%;overflow-x:hidden;overflow-x:clip;scroll-behavior:auto;overscroll-behavior:none}
 ::-webkit-scrollbar{width:6px;background:#E9D9B8}
 ::-webkit-scrollbar-thumb{background:#5A4A38}
 ::selection{background:#5A4A38;color:#F4EBD8}
@@ -145,7 +145,8 @@ background-repeat:repeat;background-size:256px 256px;opacity:1;mix-blend-mode:mu
 #scroll-spacer{height:240vh;pointer-events:none}
 
 /* === CONTENT WRAPPER === */
-#content{position:relative;z-index:50;background:#E9D9B8;opacity:0}
+#content{position:relative;z-index:50;background:#E9D9B8;opacity:0;overflow:clip}
+@supports not (overflow:clip){#content{overflow-x:hidden}}
 #content.visible{opacity:1}
 #content .wrapper{max-width:1440px;margin:0 auto;padding:0 40px;position:relative;z-index:1}
 
@@ -341,7 +342,7 @@ mix-blend-mode:multiply;opacity:0.5}
   .hero-headline{font-size:26px}
   .hero-image{height:220px}
   .hero-deck{max-width:100%}
-  .section-title{font-size:20px}
+  .section-title{font-size:20px;white-space:normal;text-align:center}
   .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .product-card-body{padding:10px}
   .product-card-title{font-size:11px}
