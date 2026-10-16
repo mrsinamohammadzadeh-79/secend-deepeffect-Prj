@@ -132,7 +132,7 @@ background-repeat:repeat;background-size:256px 256px;opacity:1;mix-blend-mode:mu
 .loader-marquee-track span{padding-right:10px}
 
 /* === 3D SCENE === */
-#three-container{position:fixed;top:0;left:0;width:100%;height:100vh;z-index:100;pointer-events:none;opacity:1;transition:opacity 0.1s}
+#three-container{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;z-index:100;pointer-events:none;opacity:1;transition:opacity 0.1s}
 #three-container canvas{display:block;width:100%!important;height:100%!important}
 
 /* === SCROLL HINT === */
@@ -440,7 +440,8 @@ mix-blend-mode:multiply;opacity:0.5}
   .scene-scroll-text h2{font-size:50px}
 }
 @media(max-width:768px){
-  #three-container{height:100vh;height:100dvh}
+  /* NOTE: intentionally no 100vh/100dvh override here — the container is sized with
+     top:0;bottom:0 on the fixed layer so the mobile address bar hiding cannot create a gap/jump. */
   .scene-nav{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 0;padding:8px 6px}
   .scene-nav-links{flex-wrap:wrap;justify-content:center;row-gap:2px}
   .scene-nav-links a{font-size:11px;letter-spacing:1px}
@@ -1069,11 +1070,11 @@ function hideLoaderWhenReady() {
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(38, window.innerWidth / window.innerHeight, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(38, container.clientWidth / container.clientHeight, 0.1, 100);
 camera.position.set(4, 2.5, 5);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.4;
@@ -1207,7 +1208,7 @@ function updateScene() {
 
   // Background zoom with scroll (cover-fit, no edge stretching)
   if (bgTexture && bgTexture.image) {
-    var screenAspect = window.innerWidth / window.innerHeight;
+    var screenAspect = container.clientWidth / container.clientHeight;
     var imgAspect = bgTexture.image.width / bgTexture.image.height;
     var rx, ry;
     if (screenAspect > imgAspect) {
@@ -1251,6 +1252,7 @@ function updateScene() {
     container.style.display = 'none';
     container.style.pointerEvents = 'none';
   } else {
+    if (container.style.display === 'none') sizeRenderer(); // re-sync after the fixed layer was hidden
     container.style.display = 'block';
     container.style.pointerEvents = 'none';
   }
@@ -1337,10 +1339,18 @@ document.addEventListener('gltfReady', loadModel);
 // Also try loading immediately in case GLTFLoader already loaded
 if (typeof THREE !== 'undefined' && THREE.GLTFLoader) loadModel();
 
-function onResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
+function sizeRenderer() {
+  // Use the container's own (stable) size instead of window.innerHeight, so the
+  // mobile address bar showing/hiding does not resize the canvas or change the aspect.
+  var w = container.clientWidth;
+  var h = container.clientHeight;
+  if (!w || !h) return; // container is display:none right now — keep the last good size
+  camera.aspect = w / h;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(w, h);
+}
+function onResize() {
+  sizeRenderer();
 }
 window.addEventListener('resize', onResize);
 
