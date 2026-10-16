@@ -132,7 +132,7 @@ background-repeat:repeat;background-size:256px 256px;opacity:1;mix-blend-mode:mu
 .loader-marquee-track span{padding-right:10px}
 
 /* === 3D SCENE === */
-#three-container{position:fixed;top:0;left:0;right:0;bottom:0;width:100%;z-index:100;pointer-events:none;opacity:1;transition:opacity 0.1s}
+#three-container{position:fixed;top:0;left:0;width:100%;height:100vh;height:100lvh;z-index:100;pointer-events:none;opacity:1;transition:opacity 0.1s}
 #three-container canvas{display:block;width:100%!important;height:100%!important}
 
 /* === SCROLL HINT === */
@@ -440,8 +440,10 @@ mix-blend-mode:multiply;opacity:0.5}
   .scene-scroll-text h2{font-size:50px}
 }
 @media(max-width:768px){
-  /* NOTE: intentionally no 100vh/100dvh override here — the container is sized with
-     top:0;bottom:0 on the fixed layer so the mobile address bar hiding cannot create a gap/jump. */
+  /* NOTE: no 100dvh here on purpose. dvh changes while the mobile address bar
+     hides/shows, which briefly leaves the fixed layer shorter than the viewport
+     (visible empty strip + the scene appearing to slide). The base rule uses the
+     stable large viewport (100vh/100lvh) so it always fully covers. */
   .scene-nav{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 0;padding:8px 6px}
   .scene-nav-links{flex-wrap:wrap;justify-content:center;row-gap:2px}
   .scene-nav-links a{font-size:11px;letter-spacing:1px}
